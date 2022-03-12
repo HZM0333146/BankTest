@@ -1,19 +1,21 @@
 package idv.hzm.app.service;
 
+import java.util.List;
+
 import org.springframework.http.ResponseEntity;
 
-import idv.hzm.app.dao.Coin;
+import idv.hzm.app.mode.Coin;
 
 public interface CoinService {
 
-	public ResponseEntity<String> getAllCoin();
+	public ResponseEntity<List<Coin>> getAllCoin();
 
-	public ResponseEntity<String> getCoin(Integer id);
+	public ResponseEntity<Coin> getCoin(String code);
 
 	public ResponseEntity<String> addCoin(Coin coin);
+		
+	public ResponseEntity<String> upDateCoin(String code, Coin coin);
 
-	public ResponseEntity<String> upDateCoin(Integer id, Coin coin);
-
-	public ResponseEntity<String> delCoin(Integer id);
-	
+	public ResponseEntity<Boolean> delCoin(String code);
+		
 }
